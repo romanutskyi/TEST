@@ -27,3 +27,5 @@ sed -e "s/{hostname}}/${a}/g; \
         s/{{home_folder}}/${d##/}/g; \
         s/{{first_name}}/${f}/g; \
         s/{{last_name}}/${l}/g;" $1 > output.yml
+        
+        
