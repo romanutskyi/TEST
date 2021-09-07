@@ -1,0 +1,22 @@
+##### create volume on local machine
+docker volume create mysql-volume
+
+##### RUN THE DOCKER CONTAINER on 3306 port, be sure that port is free
+docker run --name=mk-mysql -p3307:3307 -v mysql-volume:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql/mysql-server:latest
+
+##### Connect to the container’s interactive bash shell
+docker exec -it mk-mysql bash
+
+##### connect to your MySQL server using 'my-secret-pw' as a password and create a new Database
+mysql -u root -p
+DROP DATABASE IF EXISTS test;
+CREATE DATABASE test;
+use test;
+CREATE TABLE files (
+FILENAME VARCHAR (127),
+FULL_PATH VARCHAR (300),
+SIZE REAL,
+CREATION_DATE VARCHAR (30));
+exit;
+
+#####Docker container with running MySQL server and 'test' database with 'files' schema is UP and running
