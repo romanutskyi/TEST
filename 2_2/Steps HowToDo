@@ -19,4 +19,4 @@ SIZE REAL,
 CREATION_DATE VARCHAR (30));
 exit;
 
-#####Docker container with running MySQL server and 'test' database with 'files' schema is UP and running
+#####Docker container with running MySQL server and 'test' database with 'files' schema is UP and running on port 3307
